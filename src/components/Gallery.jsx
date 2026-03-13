@@ -22,9 +22,9 @@ export default function Gallery(){
   if(error) return <p className="text-red-500 text-center font-bold">{error}</p>
 
   return (
-    <div className="p-6">
+    <div className="w-auto mx-auto px-6 pb-10">
       <SearchBar search={search} setSearch={handleSearch}/>
-      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-10 grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
         {filteredPhotos.map((photo)=>(
           <PhotoCard key={photo.id} photo={photo} dispatch={dispatch} isFav={state.favourites.some((p)=>p.id===photo.id)}/>
         ))}
